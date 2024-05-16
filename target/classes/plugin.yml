@@ -1,0 +1,6 @@
+name: CapovillaRank
+version: '1.0'
+main: br.com.vitorcapovilla.capovillarank.CapovillaRank
+api-version: '1.19'
+commands:
+  rank:

@@ -1,0 +1,6 @@
+br\com\vitorcapovilla\capovillarank\RankListener.class
+br\com\vitorcapovilla\capovillarank\RankCommand.class
+br\com\vitorcapovilla\capovillarank\manager\NametagManager.class
+br\com\vitorcapovilla\capovillarank\Rank.class
+br\com\vitorcapovilla\capovillarank\CapovillaRank.class
+br\com\vitorcapovilla\capovillarank\manager\RankManager.class

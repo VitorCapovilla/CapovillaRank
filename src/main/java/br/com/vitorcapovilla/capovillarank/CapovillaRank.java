@@ -13,6 +13,7 @@ public final class CapovillaRank extends JavaPlugin {
     @Override
     public void onEnable() {
         getCommand("rank").setExecutor(new RankCommand(this));
+        getCommand("rank").setTabCompleter(new RankCommand(this));
 
         rankManager = new RankManager(this);
         nametagManager = new NametagManager(this);

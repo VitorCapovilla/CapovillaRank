@@ -6,9 +6,13 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
-public class RankCommand implements CommandExecutor {
+import java.util.ArrayList;
+import java.util.List;
+
+public class RankCommand implements CommandExecutor, TabCompleter {
 
     private CapovillaRank main;
 
@@ -57,5 +61,28 @@ public class RankCommand implements CommandExecutor {
 
 
         return false;
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+        List<String> completions = new ArrayList<>();
+
+        if (args.length == 1) { // Se o jogador digitou apenas /rank
+            String partialPlayer = args[0].toLowerCase(); // Argumento parcial fornecido pelo jogador
+            for (Player player : Bukkit.getOnlinePlayers()) {
+                if (player.getName().toLowerCase().startsWith(partialPlayer)) {
+                    completions.add(player.getName());
+                }
+            }
+        } else if (args.length == 2) {
+            String partialRank = args[1].toLowerCase();
+            for (Rank rank : Rank.values()) {
+                if (rank.name().toLowerCase().startsWith(partialRank)) {
+                    completions.add(rank.name());
+                }
+            }
+        }
+
+        return completions;
     }
 }

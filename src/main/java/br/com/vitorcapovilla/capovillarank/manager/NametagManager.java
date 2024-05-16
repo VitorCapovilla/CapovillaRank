@@ -2,7 +2,6 @@ package br.com.vitorcapovilla.capovillarank.manager;
 
 import br.com.vitorcapovilla.capovillarank.CapovillaRank;
 import br.com.vitorcapovilla.capovillarank.Rank;
-import jdk.tools.jmod.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Team;

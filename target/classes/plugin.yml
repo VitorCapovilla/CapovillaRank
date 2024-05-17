@@ -4,3 +4,4 @@ main: br.com.vitorcapovilla.capovillarank.CapovillaRank
 api-version: '1.19'
 commands:
   rank:
+    permission: capovillarank.rank

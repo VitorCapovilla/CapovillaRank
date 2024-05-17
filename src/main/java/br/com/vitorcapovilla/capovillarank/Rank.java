@@ -4,10 +4,10 @@ import org.bukkit.ChatColor;
 
 public enum Rank {
 
-    Dono(ChatColor.DARK_RED.toString() + ChatColor.BOLD +"[Dono] ", new String[]{}, 10),
-    SubDono(ChatColor.RED.toString() + ChatColor.BOLD + "[SubDono] ", new String[]{}, 9),
-    Admin(ChatColor.DARK_GREEN.toString() + ChatColor.BOLD + "[Admin] ", new String[]{}, 8),
-    Mod(ChatColor.GREEN.toString().toString() + ChatColor.BOLD + "[Mod] ", new String[]{}, 7),
+    Dono(ChatColor.DARK_RED.toString() + ChatColor.BOLD + "[Dono] ", new String[]{"capovillarank.rank"}, 10),
+    SubDono(ChatColor.RED.toString() + ChatColor.BOLD + "[SubDono] ", new String[]{"capovillarank.rank"}, 9),
+    Admin(ChatColor.DARK_GREEN.toString() + ChatColor.BOLD + "[Admin] ", new String[]{"capovillarank.rank"}, 8),
+    Mod(ChatColor.GREEN.toString() + ChatColor.BOLD + "[Mod] ", new String[]{}, 7),
     Trial(ChatColor.LIGHT_PURPLE.toString() + ChatColor.BOLD + "[Trial] ", new String[]{}, 6),
     Ajudante(ChatColor.YELLOW.toString() + ChatColor.BOLD + "[Ajudante] ", new String[]{}, 5),
     YouTuber(ChatColor.AQUA.toString() + ChatColor.BOLD + "[YT] ", new String[]{}, 4),
@@ -20,22 +20,25 @@ public enum Rank {
     private String[] permissions;
     private int nvl;
 
-    Rank(String display, String[] permissions, int nvl){
+    Rank(String display, String[] permissions, int nvl) {
         this.display = display;
         this.permissions = permissions;
         this.nvl = nvl;
     }
 
-    public String getDisplay(){
+    public String getDisplay() {
         return display;
     }
 
-    public String[] getPermissions(){
+    public String[] getPermissions() {
         return permissions;
     }
 
-    public int getNvl(){
-        return nvl;
+    public void setPermissions(String[] permissions) {
+        this.permissions = permissions;
     }
 
+    public int getNvl() {
+        return nvl;
+    }
 }
